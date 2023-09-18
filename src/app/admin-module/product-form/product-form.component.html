@@ -1,0 +1,40 @@
+<mat-card fxLayoutAlign="center center" fxFlexFill>
+  <mat-card-content fxFlex="50" fxFlex.xs="80"  >
+          <mat-toolbar color="primary">
+              Product
+          </mat-toolbar>
+          <form [formGroup]="productForm" (ngSubmit)="submitData()" fxLayoutAlign="stretch" fxLayout="column">
+              <mat-form-field>
+                  <mat-label>Category</mat-label>
+                  <input matInput placeholder="category" formControlName="category" required>
+                  <mat-error *ngIf="productForm.get('category')?.hasError('required')">please enter category</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="description" formControlName="description" required>
+                <mat-error *ngIf="productForm.get('description')?.hasError('required')">please enter description</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>ID</mat-label>
+              <input matInput placeholder="id" formControlName="id">
+              <mat-error *ngIf="productForm.get('id')?.hasError('required')">please enter ID</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>image</mat-label>
+              <input matInput placeholder="image url" formControlName="image" required>
+              <mat-error *ngIf="productForm.get('image')?.hasError('required')">please enter image url</mat-error>
+            </mat-form-field>
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="title" formControlName="title" required>
+            <mat-error *ngIf="productForm.get('title')?.hasError('required')">title</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="price" formControlName="price" required>
+            <mat-error *ngIf="productForm.get('price')?.hasError('required')">title</mat-error>
+          </mat-form-field>
+              <button mat-raised-button type="submit" [disabled]="productForm.invalid" color="primary">submit</button>
+          </form>
+  </mat-card-content>
+</mat-card>

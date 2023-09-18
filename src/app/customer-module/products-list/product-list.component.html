@@ -1,0 +1,18 @@
+<mat-spinner fxLayoutAlign="center center" *ngIf="isloading" fxFlexFill></mat-spinner>
+<div *ngIf="!isloading" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center"  fxFlex="90" fxFlex.xs="95" >
+    <mat-card class="card" *ngFor="let product  of products" fxFlexAlign="stretch">
+        <mat-card-header>
+            <mat-card-title>{{product.title}}</mat-card-title>
+            <mat-card-subtitle><b>({{product.price | currency}})</b></mat-card-subtitle>
+        </mat-card-header>
+      <mat-card-content>
+        <img mat-card-sm-image src="{{ product.image }}" alt="Photo of the product">
+        <p>
+          {{ product.description }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" disabled="true">add to cart</button>
+      </mat-card-actions>
+    </mat-card>
+</div>
