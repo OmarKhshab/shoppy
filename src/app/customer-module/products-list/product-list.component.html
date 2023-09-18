@@ -1,4 +1,4 @@
-<mat-spinner fxLayoutAlign="center center" *ngIf="isloading" fxFlexFill></mat-spinner>
+<mat-spinner fxLayoutAlign="center center" *ngIf="isloading"></mat-spinner>
 <div *ngIf="!isloading" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center"  fxFlex="90" fxFlex.xs="95" >
     <mat-card class="card" *ngFor="let product  of products" fxFlexAlign="stretch">
         <mat-card-header>
