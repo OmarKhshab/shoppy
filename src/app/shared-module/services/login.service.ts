@@ -9,7 +9,11 @@ export class LoginService {
   userRole$: BehaviorSubject<string> = new BehaviorSubject('');
   loginState$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   constructor(private router: Router) {}
-
+  /**
+   * @param username 
+   * @param password 
+   * @returns 
+   */
   public login(username: string, password: string): any {
     if (username === defines.userLoginData.username && password === defines.userLoginData.password) {
       this.loginState$.next(true);
@@ -27,7 +31,9 @@ export class LoginService {
         return throwError("error");
     }
   }
-
+  /**
+   * logout
+   */
   public logout() {
     localStorage.removeItem('currentUser');
     localStorage.removeItem('isLoggedIn');

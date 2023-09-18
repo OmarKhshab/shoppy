@@ -37,8 +37,6 @@ export class EditProductComponent implements OnInit {
     if (id) {
       this.isAdd = false;
       this.productService.getProduct(id).subscribe((product) => {
-        console.log(product);
-        
       this.productForm.controls['category'].setValue(product.category);
       this.productForm.controls['description'].setValue(product.description);
       this.productForm.controls['id'].setValue(product.id);
