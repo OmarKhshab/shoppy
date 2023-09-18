@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements  OnInit  {
+export class HeaderComponent {
 
   public loginState: boolean = false;
 
@@ -29,9 +29,6 @@ export class HeaderComponent implements  OnInit  {
       this.isLoggedIn = loginService.loginStatus();
 
     }
-  /** on init */  
-  public ngOnInit() {
-  }
   /**
    * logout
    */
@@ -51,7 +48,6 @@ export class HeaderComponent implements  OnInit  {
           }
     }
     public goToHomePage() {
-      console.log('w');
       this.router.navigate(['/']);
     }
 }    
