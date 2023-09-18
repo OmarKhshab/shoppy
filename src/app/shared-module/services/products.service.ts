@@ -69,7 +69,4 @@ export class ProductsService {
   getAllProductsInCategory(category: string): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.url}/category/${category}`);
   }
-  getAllProducts() {
-    return this.productsSubject$.asObservable();
-  }
 }
